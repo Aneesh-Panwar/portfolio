@@ -1,0 +1,39 @@
+html, body {
+    color: aliceblue;
+    height: 100%;
+    margin: 0;
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    overflow: auto;
+  }
+
+  /* Main animated grid layer */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(44, 44, 44, 0.327) 1px, transparent .5px),
+      linear-gradient(90deg, rgba(45, 45, 45, 0.327) 1px, transparent .5px);
+    background-size: 80px 80px;
+    z-index: 0;
+    animation: flicker 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Optional noise overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('../public/images/diagmonds.png');
+    opacity: 50%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Grid flicker animation */
+  @keyframes flicker {
+    0%, 100% { opacity:80%; }
+    50% { opacity: 30%; }
+  }
