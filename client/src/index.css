@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@config "../tailwind.config.js";
 
 /* Webkit (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {

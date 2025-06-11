@@ -1,4 +1,5 @@
 import React from 'react'
+import ZoomableImage from './ZoomableImage'
 
 export default function Head() {
   return (
@@ -8,9 +9,8 @@ export default function Head() {
         </div> */}
 
         <div className='flex items-center gap-4'>
-            <div className="h-20 overflow-hidden">
-                    <img src="./images/profile.jpg" alt="profile" className='h-full object-cover  rounded-[50%]'/>
-            </div>
+            <ZoomableImage src={"./images/profile.jpg"} />
+
             <div>
                 <h3 className='text-2xl'>Aneesh Panwar</h3>
                 <p className='text-gray-400'>Programmer & Developer</p>

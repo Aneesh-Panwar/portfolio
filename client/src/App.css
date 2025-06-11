@@ -13,9 +13,9 @@ html, body {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     background-image:
-      linear-gradient(rgba(44, 44, 44, 0.327) 1px, transparent .5px),
-      linear-gradient(90deg, rgba(45, 45, 45, 0.327) 1px, transparent .5px);
-    background-size: 80px 80px;
+      linear-gradient(rgba(44, 44, 44, 0.327) 2px, transparent 1px),
+      linear-gradient(90deg, rgba(45, 45, 45, 0.327) 2px, transparent 1px);
+    background-size: 40px 40px;
     z-index: 0;
     animation: flicker 5s ease-in-out infinite;
     pointer-events: none;
