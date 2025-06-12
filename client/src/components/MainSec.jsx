@@ -5,6 +5,8 @@ import TechSkills from './TechSkills'
 import Projects from './Projects'
 import Journey from './Journey'
 import ZoomableImage from './ZoomableImage'
+import AdvancedTabs from './AdvancedTabs'
+import ExpandingNav from './ExpandingNav'
 
 export default function MainSec() {
   return (
@@ -13,7 +15,7 @@ export default function MainSec() {
         <SecLayout heading={"technical skills"} Component={TechSkills} />
         <SecLayout heading={"My Work"} Component={Projects} />
         <SecLayout heading={"My Journey"} Component={Journey} />
-
+        <ExpandingNav/>
     </div>
   )
 }
