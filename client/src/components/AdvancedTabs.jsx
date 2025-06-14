@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, act } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSwipeable } from "react-swipeable";
 import { LayoutGrid, Monitor, Server, Smartphone,Code2,Wrench } from "lucide-react";
+import ConicCircularProgress from "./CircularProgress";
 
 const tabData = [
   { name: "All", icon: <LayoutGrid size={18} />, content: "All projects listed here." },
@@ -10,8 +11,27 @@ const tabData = [
   { name: "Mobile", icon: <Smartphone size={18} />, content: "Mobile apps here." },
   { name: "Languages", icon: <Code2 size={18} />, content: "C, Python, Java, etc." },
   { name: "Tools & others", icon: <Wrench size={18} />, content: "Git, VSCode, Postman..." },
+  { name: "Learning", icon: <Wrench size={18} />, content: "learning" },
 
 ];
+
+const skills = [
+  { name: "C",
+    logo:"",
+    catagory: "Languages",
+    proficiency: 85,
+  },
+  { name: "java script",
+    logo:"",
+    catagory: "Frontend",
+    proficiency: 70,
+  },
+  { name: "Node.js",
+    logo:"",
+    catagory: "Backend",
+    proficiency: 70,
+  },
+]
 
 
 // const fetchContent = (name) => {
@@ -43,16 +63,20 @@ const AdvancedTabs = () => {
     trackMouse: true,
   });
 
+  const tabSkills = (tab)=>{
+    
+  }
+
   return (
     <div className=" mx-auto mt-10 p-4">
       {/* Floating draggable header */}
 
-      <div className="overflow-hidden rounded-3xl">
+      <div className="overflow-hidden rounded-md shadow-full">
       <motion.div
-        className="flex justify-around gap-1 overflow-x-auto whitespace-nowrap scroll-x-custom bg-black rounded-full shadow-lg p-1 cursor-grab"
+        className="flex justify-around gap-1 overflow-x-auto whitespace-nowrap scroll-x-custom bg-black rounded-md shadow-lg p-1 cursor-grab"
         drag
-        dragConstraints={{ left: -80, right: 80, top: 0, bottom: 0 }}
-        dragElastic={0.2}
+        dragConstraints={{ left: -50, right: 50, top: 0, bottom: 0 }}
+        dragElastic={0.3}
       >
         {tabs.map((tab, i) => (
           <button
@@ -65,7 +89,7 @@ const AdvancedTabs = () => {
             {activeTab === i && (
                 <motion.div
                 layoutId="activeTab"
-                className="absolute inset-0 bg-gray-800 rounded-full z-0"
+                className="absolute inset-0 bg-gray-800 rounded-md z-0"
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
             )}
@@ -80,7 +104,7 @@ const AdvancedTabs = () => {
       {/* Tab Content with swipe */}
       <div
         {...swipeHandlers}
-        className="mt-6 bg-black rounded-lg shadow p-4 min-h-[120px]"
+        className="mt-6 bg-black shadow-inner rounded-lg  p-4 min-h-[120px]"
       >
         <AnimatePresence mode="wait">
           <motion.div
@@ -90,7 +114,10 @@ const AdvancedTabs = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            {tabs[activeTab].content}
+            {skills.map((skill,i)=>{
+              return (skill.catagory === tabs[activeTab].name ? skill.name : "")
+            })}
+            <ConicCircularProgress percent={80} duration={1000}/>
           </motion.div>
         </AnimatePresence>
       </div>

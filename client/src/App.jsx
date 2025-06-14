@@ -7,7 +7,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className='md:px-3xl sm:px-100 relative h-screen z-50'>
+    <div className='md:px-3xl sm:px-100 relative h-screen'>
 
       <div className='relative' >
         <Head/>

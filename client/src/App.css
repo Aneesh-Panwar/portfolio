@@ -37,3 +37,73 @@ html, body {
     0%, 100% { opacity:80%; }
     50% { opacity: 30%; }
   }
+
+  .conic-gradient-box {
+    background: conic-gradient(
+      from 0deg,
+      red,
+      yellow,
+      green,
+      cyan,
+      blue,
+      magenta,
+      red
+    );
+    padding: 2px;
+  }
+
+  @keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.typewriter {
+  display: inline-block;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  letter-spacing: 0.2cap;
+  overflow: hidden;
+  border-right: 0 solid;
+  width: 0;
+  animation: 
+    typing 2.5s steps(16, end) infinite alternate,
+    blink 0.7s step-end infinite;
+}
+
+.octagon{
+   clip-path: polygon(
+    2% 0%,   /* top-left inward */
+    98% 0%,   /* top-right inward */
+    100% 10px, /* right-top inward */
+    100% 95%, /* right-bottom inward */
+    98% 100%, /* bottom-right inward */
+    2% 100%, /* bottom-left inward */
+    0% 95%,   /* left-bottom inward */
+    0% 5%    /* left-top inward */
+  );
+}
+
+.octagon-profile{
+   clip-path: polygon(
+    10% 0%,   /* top-left inward */
+    90% 0%,   /* top-right inward */
+    100% 8px, /* right-top inward */
+    100% 90%, /* right-bottom inward */
+    90% 100%, /* bottom-right inward */
+    10% 100%, /* bottom-left inward */
+    0% 90%,   /* left-bottom inward */
+    0% 10%    /* left-top inward */
+  );
+}
+
+
+  

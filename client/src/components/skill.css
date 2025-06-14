@@ -1,0 +1,47 @@
+.skill{
+    width: 160px;
+    height: 160px;
+    position: relative;
+}
+
+.outer{
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    box-shadow: 6px 6px 10px -1px rgba(72, 71, 71, 0.15),
+                -6px -6px 10px -1px rgba(161, 161, 161, 0.15);
+    padding: 20px;
+    background: conic-gradient(red,green,blue,purple,rgba(0, 0, 0, 0.019) 115%);
+}
+
+.inner{
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    box-shadow: inset 6px 6px 10px -1px rgba(155, 150, 150, 0.15),
+                inset -6px -6px 10px -1px rgba(68, 97, 193, 0.15),
+                -1px -1px 0 rgba(66, 212, 64, 0.15),
+                1px 1px 0 rgba(10, 105, 157, 0.15),
+                0px 12px 12px -10px rgba(146, 45, 45, 0.15);
+    border-radius: 50%;
+    background: #000;
+}
+#number{
+    font-weight: 600;
+
+}
+
+.shadow-full{
+    box-shadow: 0px 0px 5px -8px rgba(0, 221, 255, 0.2),
+                0px 0px 5px 0px rgba(162, 255, 0, 0.3);
+}
+
+.shadow-inner{
+     box-shadow: inset 3px 3px 10px -1px rgba(0, 55, 255, 0.15),
+                inset -3px -3px 10px -1px rgba(51, 255, 0, 0.15),
+                -1px -1px 0 rgba(140, 0, 255, 0.15),
+                1px 1px 0 rgba(0, 204, 255, 0.15),
+                0px 10px 10px -10px rgba(0, 0, 0, 0.15);
+}

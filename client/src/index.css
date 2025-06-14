@@ -1,8 +1,10 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
-/* Webkit (Chrome, Edge, Safari) */
-/* Global vertical scrollbar */
+html{
+  scroll-behavior: smooth;
+}
+
 body::-webkit-scrollbar {
   width: 8px;
 }
@@ -42,3 +44,11 @@ body::-webkit-scrollbar-thumb:hover {
 .scroll-x-custom::-webkit-scrollbar-thumb:hover {
   background-color: #363636;
 }
+
+
+.wallpoet-regular {
+  font-family: "Wallpoet", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+

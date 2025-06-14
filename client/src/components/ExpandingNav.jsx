@@ -103,10 +103,10 @@ export default function ExpandingNav() {
 
               <motion.button
                 onClick={toggleMenu}
-                className="z-50 w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg backdrop-blur-md mx-1"
+                className="z-50 w-16 h-16 rounded-full bg-transparent text-white flex items-center justify-center shadow-lg backdrop-blur-lg mx-1"
                 whileTap={{ scale: 0.95 }}
               >
-                <User size={28} />
+                <img src="./logos/silverF.png" alt="" />
               </motion.button>
 
               {rightIcons.map((item, index) => (
@@ -129,10 +129,12 @@ export default function ExpandingNav() {
         {!isOpen && (
           <motion.button
             onClick={toggleMenu}
-            className="z-50 w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg backdrop-blur-md"
+            className="z-50 w-16 h-16 rounded-full text-white flex items-center justify-center shadow-lg backdrop-blur-xl"
             whileTap={{ scale: 0.95 }}
           >
-            <User size={28} />
+            <div className='shadow-inner rounded-full'>
+            <img src="./logos/silverF.png" alt=""  className='bg-black/40  rounded-full'/>
+            </div>
           </motion.button>
         )}
       </div>

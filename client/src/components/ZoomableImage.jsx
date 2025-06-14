@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 
-export default function ZoomableImage({ src, alt = "Zoomable image", className = "w-20 h-20 rounded-full object-cover" }) {
+export default function ZoomableImage({ src, alt = "Zoomable image", className = "w-20 h-20  object-cover" }) {
   const imgRef = useRef(null);
   const [isZoomed, setIsZoomed] = useState(false);
   const [cloneStyle, setCloneStyle] = useState(null);
@@ -65,18 +65,22 @@ export default function ZoomableImage({ src, alt = "Zoomable image", className =
 
   return (
     <>
+   <div className="relative overflow-hidden octagon-profile hover:shadow-glow shadow-2xl">
       <img
         src={src}
         alt={alt}
         ref={imgRef}
         onClick={handleOpen}
-        className={className + " cursor-pointer hover:shadow-glow shadow-2xl hover:scale-105"}
+        className={className + " cursor-pointer transform transition duration-400 ease-in-out hover:scale-150 hover:first:visible "}
       />
+      <p className="absolute h-full w-full bg-black/50 backdrop-blur-md top-0 left-0 flex justify-center items-center hidden z-10">open</p>
+    </div>
+
 
       {isZoomed && cloneStyle &&
         createPortal(
           <div
-            className="fixed inset-0 z-50  bg-black/50 bg-opacity-70 backdrop-blur-sm "
+            className="fixed inset-0 z-50  bg-black/50 bg-opacity-70 backdrop-blur-sm  "
             onClick={handleClose}
           >
             <img
@@ -90,7 +94,7 @@ export default function ZoomableImage({ src, alt = "Zoomable image", className =
                 width: finalStyle?.width ?? cloneStyle.width,
                 height: finalStyle?.height ?? cloneStyle.height,
                 transform: finalStyle?.transform ?? 'none',
-                transition: 'all 500ms ease-in-out',
+                transition: 'all 300ms ease-in-out',
                 borderRadius: '15px',
                 objectFit: 'cover',
                 zIndex: 100,

@@ -16,9 +16,23 @@ export default {
             '100%': { transform: 'scale(1)', opacity: '1' },
           },
         },
-        colors: { debugpink: '#ccc' },
+        colors: {
+          debugpink: '#ccc',
+          slaty: '#1b1b1e', 
+          'slaty-300': '#1f1f1f', 
+          'slaty-200': '#2b2b2b', 
+          'slaty-100': '#303030', 
+          
+        },
         boxShadow: {
-            'glow': '0 0 15px rgba(225, 0, 245, 0.6), 0 0 20px rgba(0, 220, 255, 0.5)', // adjust color as needed
+            'glow': '1px 1px 20px #464646', // adjust color as needed
+        },
+        fontFamily: {
+          wallpoet: ['"Wallpoet"', 'cursive'],
+          sans: ['Inter', 'sans-serif'],
+          poppins: ['Poppins', 'sans-serif'],
+          orbitron: ['Orbitron', 'sans-serif'],
+          roboto: ['Roboto', 'sans-serif'],
         },
       },
     },
