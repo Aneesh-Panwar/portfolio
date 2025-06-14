@@ -1,8 +1,9 @@
 import React, { useState, useEffect, act } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSwipeable } from "react-swipeable";
-import { LayoutGrid, Monitor, Server, Smartphone,Code2,Wrench } from "lucide-react";
+import { LayoutGrid, Monitor, Server, Smartphone,Code2,Wrench, Lightbulb } from "lucide-react";
 import ConicCircularProgress from "./CircularProgress";
+import SwipeHint from "./SwipeHint";
 
 const tabData = [
   { name: "All", icon: <LayoutGrid size={18} />, content: "All projects listed here." },
@@ -11,7 +12,7 @@ const tabData = [
   { name: "Mobile", icon: <Smartphone size={18} />, content: "Mobile apps here." },
   { name: "Languages", icon: <Code2 size={18} />, content: "C, Python, Java, etc." },
   { name: "Tools & others", icon: <Wrench size={18} />, content: "Git, VSCode, Postman..." },
-  { name: "Learning", icon: <Wrench size={18} />, content: "learning" },
+  { name: "Learning", icon: <Lightbulb size={18} />, content: "learning" },
 
 ];
 
@@ -74,9 +75,7 @@ const AdvancedTabs = () => {
       <div className="overflow-hidden rounded-md shadow-full">
       <motion.div
         className="flex justify-around gap-1 overflow-x-auto whitespace-nowrap scroll-x-custom bg-black rounded-md shadow-lg p-1 cursor-grab"
-        drag
-        dragConstraints={{ left: -50, right: 50, top: 0, bottom: 0 }}
-        dragElastic={0.3}
+        
       >
         {tabs.map((tab, i) => (
           <button
@@ -104,7 +103,7 @@ const AdvancedTabs = () => {
       {/* Tab Content with swipe */}
       <div
         {...swipeHandlers}
-        className="mt-6 bg-black shadow-inner rounded-lg  p-4 min-h-[120px]"
+        className="relative mt-6 bg-black shadow-inner rounded-lg  p-4  min-h-[120px]"
       >
         <AnimatePresence mode="wait">
           <motion.div
@@ -119,6 +118,7 @@ const AdvancedTabs = () => {
             })}
             <ConicCircularProgress percent={80} duration={1000}/>
           </motion.div>
+        <SwipeHint/>
         </AnimatePresence>
       </div>
     </div>

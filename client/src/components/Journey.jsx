@@ -1,4 +1,4 @@
-import { Book, Edit2, School, University } from 'lucide-react'
+import { Book, BookOpen, BookOpenIcon, Edit2, School, University } from 'lucide-react'
 import React from 'react'
 
 export default function Journey() {
@@ -25,7 +25,8 @@ export default function Journey() {
 
         <div className="py-4 pl-8 pr-4 bg-black shadow-inner hover:bg-gray-800">
             <h2 className="flex items-center gap-1.5 text-md capitalize pt-3 font-wallpoet text-gray-500">
-                <img src="./logos/identifiers/education.svg" alt="" className="h-4" />
+                {/* <img src="./logos/identifiers/education.svg" alt="" className="h-4" /> */}
+                <BookOpen size={18}/>
                 Diploma in Computer-Science & Engineering
             </h2>
             <hr className="my-1" />
@@ -40,7 +41,7 @@ export default function Journey() {
         </div>
     </div>
     </div>
-    
+
     <div className="relative ml-6 mt-4">
     
         <div className="absolute top-8 -left-14 rotate-270 text-[12px] font-orbitron">
@@ -61,7 +62,8 @@ export default function Journey() {
 
         <div className="py-4 pl-8 pr-4 bg-black shadow-inner hover:bg-gray-800">
             <h2 className="flex items-center gap-1.5 text-md capitalize pt-3 font-wallpoet text-gray-500">
-                <img src="./logos/identifiers/education.svg" alt="" className="h-4" />
+                {/* <img src="./logos/identifiers/education.svg" alt="" className="h-4" /> */}
+                <BookOpen size={18}/>
                 Diploma in Computer-Science & Engineering
             </h2>
             <hr className="my-1" />

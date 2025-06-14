@@ -7,7 +7,7 @@ import ExpandingNav from './ExpandingNav'
 
 export default function MainSec() {
   return (
-    <div className=''>
+    <div className='flex flex-col gap-25'>
         <SecLayout heading={"about Me"} Component={AboutMe} />
      
         <SecLayout heading={"technical skills"} Component={TechSkills} />
