@@ -8,13 +8,21 @@ import ExpandingNav from './ExpandingNav'
 export default function MainSec() {
   return (
     <div className='flex flex-col gap-25'>
-        <SecLayout heading={"about Me"} Component={AboutMe} />
+        <div id="about">
+          <SecLayout heading={"about Me"} Component={AboutMe} />
+        </div>
      
-        <SecLayout heading={"technical skills"} Component={TechSkills} />
+        <div id="skills">
+          <SecLayout heading={"technical skills"} Component={TechSkills} />
+        </div>
 
-        <SecLayout heading={"My Work"} Component={Projects} />
+        <div id="projects">
+          <SecLayout heading={"My Work"} Component={Projects} />
+        </div>
 
-        <SecLayout heading={"My Journey"} Component={Journey} />
+        <div id="journey">
+          <SecLayout heading={"My Journey"} Component={Journey} />
+        </div>
 
         
         <div className="block lg:hidden">

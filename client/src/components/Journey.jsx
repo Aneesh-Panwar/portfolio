@@ -4,10 +4,11 @@ import React from 'react'
 export default function Journey() {
   return (
 
-<div>
-    <div className="relative ml-6 mt-4">
+<div className=''>
+    <div className='text-cyan-700 text-xl font-wallpoet pl-4 mb-10'>From curiosity to code</div>
+    <div className="relative ml-6 mt-4 mr-4">
     
-        <div className="absolute top-8 -left-14 rotate-270 text-[12px] font-orbitron">
+        <div className="absolute top-12 -left-14 rotate-270 text-[12px] font-orbitron">
             2022-2025
         </div>
         <img
@@ -23,10 +24,10 @@ export default function Journey() {
         <span className="absolute top-0 right-0.5 bg-blue-500 text-[12px] px-1 rounded-bl-md">Education</span>
 
 
-        <div className="py-4 pl-8 pr-4 bg-black shadow-inner hover:bg-gray-800">
+        <div className="py-4 pl-8 pr-4  bg-black shadow-inner hover:bg-gray-800">
             <h2 className="flex items-center gap-1.5 text-md capitalize pt-3 font-wallpoet text-gray-500">
                 {/* <img src="./logos/identifiers/education.svg" alt="" className="h-4" /> */}
-                <BookOpen size={18}/>
+                <BookOpen size={20} color='green'/>
                 Diploma in Computer-Science & Engineering
             </h2>
             <hr className="my-1" />
@@ -34,18 +35,18 @@ export default function Journey() {
                 <img src="./logos/identifiers/location.svg" alt="" className="h-4" />
                 Location: Dehradun
             </h3>
-            <h3 className="py-1 flex items-center gap-1.5 text-sm capitalize font-orbitron tracking-[2px]">
+            <h3 className="py-1 flex items-center gap-1.5 text-[12px] capitalize font-orbitron tracking-[2px]">
                 <img src="./logos/identifiers/college.svg" alt="" className="h-4" />
-                Govt. Inter College Dwara
+                Govt. Polytechnic Dehradun
             </h3>
         </div>
     </div>
     </div>
 
-    <div className="relative ml-6 mt-4">
+    <div className="relative ml-6 mt-4 mr-4">
     
-        <div className="absolute top-8 -left-14 rotate-270 text-[12px] font-orbitron">
-            2022-2025
+        <div className="absolute top-12 -left-14 rotate-270 text-[12px] font-orbitron">
+            2020-2022
         </div>
         <img
             src="./logos/identifiers/timeDisc.svg"
@@ -64,14 +65,14 @@ export default function Journey() {
             <h2 className="flex items-center gap-1.5 text-md capitalize pt-3 font-wallpoet text-gray-500">
                 {/* <img src="./logos/identifiers/education.svg" alt="" className="h-4" /> */}
                 <BookOpen size={18}/>
-                Diploma in Computer-Science & Engineering
+                Intermediate schooling [PCM]
             </h2>
             <hr className="my-1" />
             <h3 className=" py-1 flex items-center gap-1.5 text-[12px] capitalize font-orbitron tracking-[2px]">
                 <img src="./logos/identifiers/location.svg" alt="" className="h-4" />
                 Location: Dehradun
             </h3>
-            <h3 className="py-1 flex items-center gap-1.5 text-sm capitalize font-orbitron tracking-[2px]">
+            <h3 className="py-1 flex items-center gap-1.5 text-[12px] capitalize font-orbitron tracking-[2px]">
                 <img src="./logos/identifiers/college.svg" alt="" className="h-4" />
                 Govt. Inter College Dwara
             </h3>

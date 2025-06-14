@@ -169,9 +169,9 @@ const ConicCircularProgress = ({ percent = 0, size = 80, duration = 1000 }) => {
 
       {/* Text in center */}
       <div
-        className='flex flex-col justify-center items-center font-orbitron absolute z-2'
+        className='flex flex-col justify-center items-center font-jura absolute z-2'
       >
-        <p className='text-[8px] font-light text-gray-400 '>proficiency</p>
+        <p className='text-[10px] font-semibold text-gray-400 '>proficiency</p>
         <p>{displayedPercent}%</p>
       </div>
     </div>

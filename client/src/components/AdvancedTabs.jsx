@@ -69,8 +69,9 @@ const AdvancedTabs = () => {
   }
 
   return (
-    <div className=" mx-auto mt-10 p-4">
+    <div className=" mx-auto p-4">
       {/* Floating draggable header */}
+      
 
       <div className="overflow-hidden rounded-md shadow-full">
       <motion.div
@@ -81,7 +82,7 @@ const AdvancedTabs = () => {
           <button
             key={i}
             onClick={() => setActiveTab(i)}
-            className={`relative z-10 w-full px-3 py-2 text-sm font-semibold flex items-center justify-center gap-1 transition duration-200 ${
+            className={`relative z-10 w-full px-3 py-2 text-sm font-kode font-bold flex items-center justify-center gap-1 transition duration-200 ${
               activeTab === i ? "text-white" : "text-gray-600"
             }`}
             >
@@ -103,9 +104,9 @@ const AdvancedTabs = () => {
       {/* Tab Content with swipe */}
       <div
         {...swipeHandlers}
-        className="relative mt-6 bg-black shadow-inner rounded-lg  p-4  min-h-[120px]"
+        className="relative max-h-100 overflow-auto mt-6 bg-black shadow-inner rounded-lg  p-4  min-h-[120px]"
       >
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           <motion.div
             key={activeTab}
             initial={{ opacity: 0, y: 20 }}
@@ -113,14 +114,22 @@ const AdvancedTabs = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
+            
             {skills.map((skill,i)=>{
               return (skill.catagory === tabs[activeTab].name ? skill.name : "")
             })}
+            
+            <div className="flex gap-1 flex-wrap justify-around items-center">
             <ConicCircularProgress percent={80} duration={1000}/>
+            <ConicCircularProgress percent={80} duration={1000}/>
+            <ConicCircularProgress percent={80} duration={1000}/>
+            <ConicCircularProgress percent={80} duration={1000}/>
+            
+            </div>
           </motion.div>
-        <SwipeHint/>
         </AnimatePresence>
       </div>
+      <SwipeHint/>
     </div>
   );
 };

@@ -10,7 +10,9 @@ function App() {
     <div className='md:px-3xl sm:px-100 relative h-screen'>
 
       <div className='relative' >
-        <Head/>
+       <div id='home'>
+         <Head/>
+       </div>
         <MainSec/>
       </div>
     </div>
