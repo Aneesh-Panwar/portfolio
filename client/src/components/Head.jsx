@@ -12,7 +12,7 @@ export default function Head() {
             <ZoomableImage src={"./images/profile.jpg"} />
 
             <div>
-                <h3 className='text-xl'>Aneesh Panwar
+                <h3 className='text-xl'>Aneesh Panwar <img src="./logos/f3.svg" alt="🌻"  className="h-5 inline"/>
                 </h3>
                 <p className='text-gray-400 text-sm'>Programmer & Developer</p>
                   <span className='text-sm bg-green-600 px-2 py-0.5 font-jura end rounded-sm '>Available</span>

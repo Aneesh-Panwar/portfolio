@@ -38,7 +38,7 @@ export default function ExpandingNav() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.1 }}
             >
-              <motion.div className="absolute inset-0 -z-10 flex justify-center items-center px-2 py-6 rounded-lg bg-black/50 backdrop-blur-md" />
+              <motion.div className="absolute inset-0 -z-10 flex justify-center items-center px-2 py-6 rounded-lg bg-white/10 backdrop-blur-md" />
 
               {leftIcons.map((item, index) => (
                 <motion.button
@@ -91,7 +91,7 @@ export default function ExpandingNav() {
             whileTap={{ scale: 0.95 }}
           >
             <div className='shadow-inner rounded-full'>
-              <img src="./logos/silverF.png" alt="" className='bg-black/40 rounded-full' />
+              <img src="./logos/silverF.png" alt="" className='bg-white/10 rounded-full' />
             </div>
           </motion.button>
         )}

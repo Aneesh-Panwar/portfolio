@@ -24,7 +24,7 @@ export default function Journey() {
 
                 <div className="absolute left-3 -top-1.5 w-full h-fit rounded-r-lg overflow-hidden">
                     <div className="absolute w-4 h-full bg-black shadow-full rounded-tr-full"></div>
-                    <span className="absolute top-0 right-0.5 bg-blue-500 text-[12px] px-1 rounded-bl-md">{journey.catagory}</span>
+                    <span className="absolute top-0 right-0.5 bg-[#002ca5] text-[12px] px-1 rounded-bl-md">{journey.catagory}</span>
 
 
                     <div className="py-4 pl-8 pr-4 bg-black shadow-inner cursor-pointer hover:bg-gray-950">

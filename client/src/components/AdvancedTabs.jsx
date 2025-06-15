@@ -83,20 +83,27 @@ const AdvancedTabs = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="flex flex-wrap gap-4 justify-center items-center">
-              {filteredSkills.map((skill, index) => (
-                <div key={skill.name} className="flex flex-col items-center ">
-                  <ConicCircularProgress
-                    percent={skill.proficiency}
-                    duration={800 + index * 200} // stagger animations
-                  />
-                  <div className="flex items-center bg-slaty-100 font-jura w-full mt-4 rounded-sm overflow-hidden">
+
+            <div className="flex flex-wrap gap-4 justify-evenly items-center">
+              {filteredSkills.length ? filteredSkills.map((skill, index) => (
+                <div key={skill.name} className="flex flex-col items-center bg-slaty/60 w-25 rounded-md cursor-pointer">
+                  <div className="py-4">
+                    <ConicCircularProgress
+                    percent={skill.proficiency} duration={800 + index * 200} />
+                  </div>
+                  <div className="flex items-center bg-slaty-100 font-jura w-full rounded-sm overflow-hidden">
                     <img src={skill.logo} alt="logo"  className="h-5 w-5 bg-white"/>
                     <p className="text-xs text-white px-2">{skill.name}</p>
                   </div>
                 </div>
-              ))}
+              )):
+              <div className="font-jura text-center">
+                Wellcome Buddy..!! <br />
+                It will be something soon here <span className="text-xl">☺️</span>
+              </div>
+              }
             </div>
+
           </motion.div>
         </AnimatePresence>
       </div>
