@@ -15,7 +15,7 @@ export default function Head() {
                 <h3 className='text-xl'>Aneesh Panwar
                 </h3>
                 <p className='text-gray-400 text-sm'>Programmer & Developer</p>
-                  <span className='text-sm bg-green-600 px-2 py-0.5 font-roboto end rounded-sm '>Available</span>
+                  <span className='text-sm bg-green-600 px-2 py-0.5 font-jura end rounded-sm '>Available</span>
                 
             </div>
         </div>

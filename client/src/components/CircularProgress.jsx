@@ -130,23 +130,27 @@
 // }
 
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from "react";
 
-const ConicCircularProgress = ({ percent = 0, size = 80, duration = 1000 }) => {
+const ConicCircularProgress = memo(({ percent = 0, size = 80, duration = 1000 }) => {
   const [displayedPercent, setDisplayedPercent] = useState(0);
 
   useEffect(() => {
     let start = null;
+    let animationFrame;
+
     const animate = (timestamp) => {
       if (!start) start = timestamp;
       const progress = timestamp - start;
       const progressPercent = Math.min((progress / duration) * percent, percent);
       setDisplayedPercent(Math.round(progressPercent));
       if (progressPercent < percent) {
-        requestAnimationFrame(animate);
+        animationFrame = requestAnimationFrame(animate);
       }
     };
-    requestAnimationFrame(animate);
+
+    animationFrame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrame);
   }, [percent, duration]);
 
   return (
@@ -154,30 +158,26 @@ const ConicCircularProgress = ({ percent = 0, size = 80, duration = 1000 }) => {
       style={{
         width: size,
         height: size,
-        background: `conic-gradient(red,green,blue,purple,black ${displayedPercent+10}%)`,
-        }}
-      className='shadow-full rounded-full flex items-center justify-center relative'
+        background: `conic-gradient(red, green, blue, purple, black ${displayedPercent + 10}%)`,
+      }}
+      className="rounded-full flex items-center justify-center relative"
     >
-      {/* Inner circle mask */}
       <div
         style={{
           width: size * 0.75,
           height: size * 0.75,
         }}
-        className='shadow-inne absolute rounded-full z-0 bg-black'
-      ></div>
-
-      {/* Text in center */}
-      <div
-        className='flex flex-col justify-center items-center font-jura absolute z-2'
-      >
-        <p className='text-[10px] font-semibold text-gray-400 '>proficiency</p>
-        <p>{displayedPercent}%</p>
+        className="absolute rounded-full z-0 bg-black"
+      />
+      <div className="flex flex-col justify-center items-center font-jura absolute z-2">
+        <p className="text-[10px] font-semibold text-gray-400">proficiency</p>
+        <p className="text-white">{displayedPercent}%</p>
       </div>
     </div>
   );
-};
+});
 
 export default ConicCircularProgress;
+
 
 
