@@ -19,7 +19,7 @@ function App() {
         <MainSec/>
        </div>
 
-       <div className='relative z-6 mt-0'>
+       <div className='relative z-50 mt-0'>
         <Footer/>
        </div>
       </div>

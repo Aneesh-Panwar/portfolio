@@ -11,7 +11,7 @@ export default function Footer() {
 
     const emailLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   return (
-    <div className='bg-black/50 flex flex-col gap-4 shadow-black min-h-50  py-4 font-jura'>
+    <div className='bg-black/50 flex flex-col gap-4 backdrop-blur-2xl shadow-black min-h-50  py-4 font-jura'>
         <div className="flex justify-around">
             <div className='flex flex-col capitalize'>
                 <h1 className='text-2xl relative text-gray-600 py-2'>Quick Links <hr className='w-16 border-cyan-800 '/></h1>
@@ -24,22 +24,22 @@ export default function Footer() {
             </div>
             <div className='flex flex-col capitalize'>
                 <h1 className='text-2xl relative text-gray-600 py-2'>Contact Me <hr className='w-22 border-cyan-800 '/></h1>
-                <a href="https://x.com/aneesh_panwar?t=bfFksuJHIrjvhmLqhw597A&s=08" className="hover:text-white text-gray-400">X</a>
-                <a href={emailLink} className="hover:text-white text-gray-400">E-mail me</a>
-                <a href="https://www.linkedin.com/in/aneeshpanwar/" className="hover:text-white text-gray-400">linked - in</a>
+                <a href="https://x.com/aneesh_panwar?t=bfFksuJHIrjvhmLqhw597A&s=08" className="hover:text-white pl-5 text-gray-400">X</a>
+                <a href={emailLink} className="hover:text-white pl-5 text-gray-400">E-mail me</a>
+                <a href="https://www.linkedin.com/in/aneeshpanwar/" className="hover:text-white pl-5 text-gray-400">linked - in</a>
                 <a
                     href={whatsappLink}
                     target="_blank"
-                    rel="noopener noreferrer" className="hover:text-white text-gray-400"
+                    rel="noopener noreferrer" className="hover:text-white pl-5 text-gray-400"
                 >Message</a>
             </div>
         </div>
-        <div className="flex flex-col items-center px-10 text-gray-200">
-            <div className="bg-gray-700 h-0.5 my-2 w-100"></div>
+        <div className="flex flex-col items-center px-10 text-gray-200 text-sm">
+            <div className="bg-gray-700 h-0.5 my-2 w-90"></div>
             <div className="container mx-auto px-4 text-center">
                 &copy; {new Date().getFullYear()} Aneesh Panwar. All rights reserved.
             </div>
-            <div>built with ❤️ & 🌻 using react.js + tailwind + node.js</div>
+            <div className="text-center">built with ❤️ & 🌻 using react.js + tailwind + node.js</div>
 
         </div>
         

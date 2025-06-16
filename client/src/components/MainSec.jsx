@@ -4,6 +4,7 @@ import TechSkills from './TechSkills'
 import Projects from './Projects'
 import Journey from './Journey'
 import ExpandingNav from './ExpandingNav'
+import ContactToMe from './ContactToMe'
 
 export default function MainSec() {
   return (
@@ -22,6 +23,10 @@ export default function MainSec() {
 
         <div id="journey">
           <SecLayout heading={"My Journey"} Component={Journey} />
+        </div>
+
+        <div id='contact'>
+          <SecLayout heading={"contact me"} Component={ContactToMe}/>
         </div>
 
         
