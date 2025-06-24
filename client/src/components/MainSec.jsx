@@ -1,10 +1,10 @@
 import AboutMe from './AboutMe'
 import SecLayout from '../Layouts/SecLayout'
 import TechSkills from './TechSkills'
-import Projects from './Projects'
 import Journey from './Journey'
 import ExpandingNav from './ExpandingNav'
 import ContactToMe from './ContactToMe'
+import ProjectCard from "./ProjectCard";
 
 export default function MainSec() {
   return (
@@ -18,7 +18,7 @@ export default function MainSec() {
         </div>
 
         <div id="projects">
-          <SecLayout heading={"My Work"} Component={Projects} />
+          <SecLayout heading={"My Work"} Component={ProjectCard} />
         </div>
 
         <div id="journey">
@@ -33,6 +33,7 @@ export default function MainSec() {
         <div className="block lg:hidden">
           <ExpandingNav />
         </div>
+
 
     </div>
   )

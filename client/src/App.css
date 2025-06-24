@@ -115,12 +115,6 @@ html, body {
   3px 3px 10px 3px black;
 }
 
-.shadow-3d:active {
-  transform: scale(1.03);
-  box-shadow: -2px -2px 5px white,
-              5px 5px 20px 5px black;
-}
-
 .text-shadow-3d{
   text-shadow: 1.5px 1.5px 1px rgb(0, 0, 0);
                 /* 3px 3px 10px 3px black ; */

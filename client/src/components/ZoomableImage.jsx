@@ -1,7 +1,13 @@
 import { useRef, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 
-export default function ZoomableImage({ src, alt = "Zoomable image", className = "w-20 h-20  object-cover" }) {
+export default function ZoomableImage({
+  src,
+  alt = "Zoomable image",
+  maxZoomRatio = 0.9,   // Zoom covers 90% of smaller viewport dimension
+  transitionDuration = 300,
+  className = "",       // For custom styling
+}) {
   const imgRef = useRef(null);
   const [isZoomed, setIsZoomed] = useState(false);
   const [cloneStyle, setCloneStyle] = useState(null);
@@ -26,61 +32,69 @@ export default function ZoomableImage({ src, alt = "Zoomable image", className =
     setIsZoomed(true);
 
     requestAnimationFrame(() => {
-      const targetSize = Math.min(window.innerWidth, window.innerHeight) * 0.6;
+      const maxSize = Math.min(window.innerWidth, window.innerHeight) * maxZoomRatio;
       setFinalStyle({
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: targetSize,
-        height: targetSize,
+        width: maxSize,
+        height: 'auto',
+        maxWidth: '80vw',
+        maxHeight: '80vh',
       });
     });
   };
 
   const handleClose = () => {
-    // recalculate the initial rect in case the window has been resized
     const updatedRect = initialRect ?? calculateCloneStyle();
     setFinalStyle(updatedRect);
     setTimeout(() => {
       setIsZoomed(false);
       setFinalStyle(null);
       setCloneStyle(null);
-    }, 300);
+    }, transitionDuration);
   };
-
 
   useEffect(() => {
     const handleResize = () => {
-        // recalculate the cloneStyle on window resize if zoom is not active
       if (isZoomed) {
         const updated = calculateCloneStyle();
         setCloneStyle(updated);
-        setInitialRect(updated); // Keep reference consistent
+        setInitialRect(updated);
       }
     };
+
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && isZoomed) {
+        handleClose();
+      }
+    };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("keydown", handleEscape);
+    };
   }, [isZoomed]);
-  
 
   return (
     <>
-   <div className="relative overflow-hidden octagon-profile hover:shadow-glow shadow-2xl">
-      <img
-        src={src}
-        alt={alt}
-        ref={imgRef}
-        onClick={handleOpen}
-        className={className + " cursor-pointer transform transition duration-400 ease-in-out hover:scale-150 hover:first:visible "}
-      />
-      <p className="absolute h-full w-full bg-black/50 backdrop-blur-md top-0 left-0 flex justify-center items-center hidden z-10">open</p>
-    </div>
-
+      <div className={`relative overflow-hidden rounded-md ${className}`}>
+        <img
+          src={src}
+          alt={alt}
+          ref={imgRef}
+          onClick={handleOpen}
+          className="object-cover object-top w-full h-full cursor-zoom-in transition duration-300 ease-in-out hover:scale-105"
+        />
+      </div>
 
       {isZoomed && cloneStyle &&
         createPortal(
           <div
-            className="fixed inset-0 z-50  bg-black/50 bg-opacity-70 backdrop-blur-sm  "
+            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center"
             onClick={handleClose}
           >
             <img
@@ -94,9 +108,11 @@ export default function ZoomableImage({ src, alt = "Zoomable image", className =
                 width: finalStyle?.width ?? cloneStyle.width,
                 height: finalStyle?.height ?? cloneStyle.height,
                 transform: finalStyle?.transform ?? 'none',
-                transition: 'all 300ms ease-in-out',
-                borderRadius: '15px',
-                objectFit: 'cover',
+                transition: `all ${transitionDuration}ms ease-in-out`,
+                borderRadius: '12px',
+                objectFit: 'contain',
+                maxWidth: '90vw',
+                maxHeight: '90vh',
                 zIndex: 100,
               }}
             />

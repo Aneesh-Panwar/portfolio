@@ -9,7 +9,9 @@ export default function Head() {
         </div> */}
 
         <div className='flex items-center gap-4'>
-            <ZoomableImage src={"./images/profile.jpg"} />
+            <div className='h-20 w-20'>
+             <ZoomableImage src={"./images/profile.jpg"} className='w-20 h-20'/>
+            </div>
 
             <div>
                 <h3 className='text-xl'>Aneesh Panwar <img src="./logos/f3.svg" alt="🌻"  className="h-5 inline"/>

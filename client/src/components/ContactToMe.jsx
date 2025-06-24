@@ -15,7 +15,7 @@ export default function ContactToMe() {
                 <a href="https://x.com/aneesh_panwar?t=bfFksuJHIrjvhmLqhw597A&s=08/aneeshpanwar/" className='w-full'>X</a>
             </div>
             <div className='flex gap-4 p-4 relative z-30 bg-slaty-100 text-shadow-3d text-xl shadow-3d rounded-md items-center '>
-                <img src="./logos/social/email.svg" alt=""  className='h-6 bg-white p-0.5 rounded-sm shadow-3d'/>
+                <MailIcon size={28} className='bg-white text-black p-0.5 rounded-sm shadow-3d'/>
                 <a href="mailto:aaneeshpanwar@gmail.com" className='w-full'>E-mail</a>
             </div>
             <div className='flex gap-4 p-4 relative z-30 bg-slaty-100 text-shadow-3d text-xl shadow-3d rounded-md items-center '>
