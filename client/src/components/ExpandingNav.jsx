@@ -27,7 +27,7 @@ export default function ExpandingNav() {
   };
 
   return (
-    <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
+    <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-40">
       <div className="relative z-50 flex items-center justify-center">
         <AnimatePresence>
           {isOpen && (

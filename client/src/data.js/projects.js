@@ -1,7 +1,7 @@
 export const projects = [
     {
         id :1,
-        name:"pass word generator",
+        name:"password generator",
         thumbnail: "#",
         status: "active",
         techCategory: "web",

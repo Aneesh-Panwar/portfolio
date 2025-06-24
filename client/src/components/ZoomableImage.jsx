@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 
 export default function ZoomableImage({
   src,
-  alt = "Zoomable image",
+  alt = "img N/A",
   maxZoomRatio = 0.9,   // Zoom covers 90% of smaller viewport dimension
   transitionDuration = 300,
   className = "",       // For custom styling

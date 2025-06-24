@@ -158,7 +158,7 @@ const ConicCircularProgress = memo(({ percent = 0, size = 80, duration = 1000 })
       style={{
         width: size,
         height: size,
-        background: `conic-gradient(red, green, blue, purple, black ${displayedPercent }%)`,
+        background: `conic-gradient(green,blue, black ${displayedPercent }%)`,
       }}
       className="rounded-full flex items-center justify-center relative"
     >

@@ -79,31 +79,6 @@ html, body {
     blink 0.7s step-end infinite;
 }
 
-.octagon{
-   clip-path: polygon(
-    2% 0%,   /* top-left inward */
-    98% 0%,   /* top-right inward */
-    100% 10px, /* right-top inward */
-    100% 95%, /* right-bottom inward */
-    98% 100%, /* bottom-right inward */
-    2% 100%, /* bottom-left inward */
-    0% 95%,   /* left-bottom inward */
-    0% 5%    /* left-top inward */
-  );
-}
-
-.octagon-profile{
-   clip-path: polygon(
-    10% 0%,   /* top-left inward */
-    90% 0%,   /* top-right inward */
-    100% 8px, /* right-top inward */
-    100% 90%, /* right-bottom inward */
-    90% 100%, /* bottom-right inward */
-    10% 100%, /* bottom-left inward */
-    0% 90%,   /* left-bottom inward */
-    0% 10%    /* left-top inward */
-  );
-}
 
 .shadow-3dr{
   box-shadow: inset -1.5px -1.5px 4px rgba(255, 255, 255, 0.886),

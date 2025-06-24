@@ -11,12 +11,6 @@ export default function ProjectCard() {
     setSelectedId(null);
   }
 
-  function handleOverlayClick(e) {
-    if (e.target.className === "dialog-overlay") {
-      closeDialog();
-    }
-  }
-
   return (
     <>
       <div className="flex flex-col gap-4 font-orbitron px-4">
@@ -26,7 +20,7 @@ export default function ProjectCard() {
           <div className="flex flex-col gap-4 w-full" key={item.id}>
             <div className="flex gap-4 bg-[#0b0b0b] px-2 py-2 rounded-md relative font-jura">
               <img
-                src={item.thumbnail !== "#" ? item.thumbnail : "./images/banner.jpg"}
+                src={item.thumbnail !== "#" ? item.thumbnail : "./logos/f3.svg"}
                 alt="img"
                 className="h-14 w-14 object-cover"
               />
@@ -49,38 +43,44 @@ export default function ProjectCard() {
 
       {selectedId !== null && selectedData && (
         <div
-          className="fixed inset-0 px-4 bg-black bg-opacity-50 flex justify-center items-center z-50 dialog-overlay"
-          onClick={handleOverlayClick}
+          className="fixed inset-0 px-4 bg-black/90 flex justify-center items-center z-50"
+          onClick={()=>closeDialog()}
         >
-          <div className="relative bg-slaty rounded-lg w-11/12 max-w-xl overflow-y-auto p-4">
-            <span
-              className="absolute top-3 right-3 text-xl text-gray-100 hover:text-gray-800 cursor-pointer z-100"
+          <div className="bg-[linear-gradient(135deg,#041921,#211f20)] rounded-lg w-11/12 max-w-xl overflow-y-auto "
+          onClick={(e) => e.stopPropagation()}
+          >
+            {/* <span
+              className="absolute text-xl text-gray-100 cursor-pointer z-100 top-[20%] right-[50%] translate-x-[50%] bg-black/70 px-2 rounded-full"
               onClick={closeDialog}
             >
               ✖
-            </span>
+            </span> */}
 
-            <div className="h-60 relative">
-              <ZoomableImage src={selectedData.thumbnail} className="h-50" />
+            <div className="h-50 relative">
+              <span className="font-jura bg-cyan-600 px-2  rounded-md absolute z-1 left-1 top-1">{selectedData.techCategory}</span>
+              <span className="font-jura bg-green-500 px-2  rounded-md absolute z-1 right-1 top-1">{selectedData.status}</span>
+              {/* <span className="font-kode bg-green-700 px-2  rounded-sm absolute z-1 left-1 bottom-1">{}</span>
+              <span className="font-kode bg-green-700 px-2  rounded-sm absolute z-1 right-1 bottom-1"></span> */}
+              <ZoomableImage src={selectedData.thumbnail} className="h-50 rounded-b-none" />
             </div>
-            <div>
-              <h1 className="text-2xl font-jura font-bold mb-2">{selectedData.name}</h1>
+            <div className="p-4">
+              <h1 className="text-3xl text-gray-600 font-wallpoet mb-2">{selectedData.name}</h1>
               <p className="mb-3 font-jura">{selectedData.description}</p>
-              <div className="flex flex-wrap gap-2 mb-3">
+              <div className="flex flex-wrap gap-2 mt-6">
                 {selectedData.techstack.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="bg-cyan-800 text-white text-sm px-2 py-1 rounded cursor-pointer"
+                    className="bg-gray-950 text-white text-[12px] font-jura px-2 py-1 rounded cursor-pointer"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-              <div className="flex gap-4 mt-8">
+              <div className="flex gap-6 justify-end ">
                 <a
                   href={selectedData.githubRepo}
                   target="_blank"
-                  className="text-cyan-500 cursor-pointer"
+                  className="text-gray-700 cursor-pointer"
                   rel="noreferrer"
                 >
                   <img src="" alt="" /><Github/>
@@ -88,7 +88,7 @@ export default function ProjectCard() {
                 <a
                   href={selectedData.hosting}
                   target="_blank"
-                  className="text-cyan-500 cursor-pointer"
+                  className="text-gray-700 cursor-pointer"
                   rel="noreferrer"
                 >
                   <ExternalLinkIcon/>
@@ -96,6 +96,7 @@ export default function ProjectCard() {
               </div>
             </div>
           </div>
+
         </div>
       )}
     </>

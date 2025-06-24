@@ -15,7 +15,9 @@ export default function AboutMe() {
         <p className="font-bold text-white">Got a project or idea? Feel free to reach out — 
           I’m always open to collaborations and new challenges!</p>
 
-          <button className="bg-white/20 d w-fit flex gap-1 items-center p-2 rounded-md">Lets Connect <ArrowBigRight size={20} color="black"/></button>
+          <a href="#contact">
+            <button className="bg-indigo-900 d w-fit flex gap-1 items-center p-2 rounded-md cursor-pointer">Lets Connect <ArrowBigRight size={20} color="black"/></button>
+          </a>
         </div>
 
     </div>
