@@ -73,7 +73,7 @@ const AdvancedTabs = () => {
       {/* Tab Content */}
       <div
         {...swipeHandlers}
-        className="relative max-h-100 overflow-auto mt-6 bg-black shadow-inner rounded-lg p-4 min-h-[120px]"
+        className="relative h-80 overflow-auto mt-6 bg-black shadow-inner rounded-lg p-4 min-h-[120px]"
       >
         <AnimatePresence mode="wait">
           <motion.div
@@ -86,12 +86,12 @@ const AdvancedTabs = () => {
 
             <div className="flex flex-wrap gap-4 justify-evenly items-center">
               {filteredSkills.length ? filteredSkills.map((skill, index) => (
-                <div key={skill.name} className="flex flex-col items-center bg-slaty/60 w-25 rounded-md cursor-pointer">
+                <div key={skill.name} className="flex flex-col items-center bg-zinc-950 w-25 rounded-md cursor-pointer">
                   <div className="py-4">
                     <ConicCircularProgress
                     percent={skill.proficiency} duration={800 + index * 200} />
                   </div>
-                  <div className="flex items-center bg-slaty-100 font-jura w-full rounded-sm overflow-hidden">
+                  <div className="flex items-center bg-zinc-700 font-jura w-full rounded-sm overflow-hidden">
                     <img src={skill.logo} alt="logo"  className="h-5 w-5 bg-white"/>
                     <p className="text-xs text-white px-2">{skill.name}</p>
                   </div>

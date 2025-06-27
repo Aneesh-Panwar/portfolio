@@ -46,22 +46,22 @@ export default function ContactToMe() {
         <h1 className='text-cyan-700 text-xl font-wallpoet pl-4 sm:mb-10 mb-4'>Let's connect...!!</h1>
 
         <div className='flex gap-4 p-4 relative z-30 text-shadow-3d text-xl shadow-3d rounded-md items-center '>
-          <img src="./logos/social/linkedin.svg" alt="" className='h-6 bg-white p-0.5 rounded-sm shadow-3d' />
+          <img src="./logos/social/linkedin.svg" alt="" className='h-6 bg-zinc-950 p-0.5 rounded-sm shadow-3d' />
           <a href="https://www.linkedin.com/in/aneeshpanwar/" className='w-full'>Linked - In</a>
         </div>
 
         <div className='flex gap-4 p-4 relative z-30 text-shadow-3d text-xl shadow-3d rounded-md items-center '>
-          <img src="./logos/social/twitter.svg" alt="" className='h-6 bg-white p-0.5 rounded-sm shadow-3d' />
+          <img src="./logos/social/twitter.svg" alt="" className='h-6 bg-zinc-950 p-0.5 rounded-sm shadow-3d' />
           <a href="https://x.com/aneesh_panwar?t=bfFksuJHIrjvhmLqhw597A&s=08/aneeshpanwar/" className='w-full'>X</a>
         </div>
 
         <div className='flex gap-4 p-4 relative z-30 text-shadow-3d text-xl shadow-3d rounded-md items-center '>
-          <MailIcon size={28} className='bg-white text-black p-0.5 rounded-sm shadow-3d' />
+          <MailIcon size={28} color="#6a7282" className='bg-zinc-950 text-black p-0.5 rounded-sm shadow-3d' />
           <a href="mailto:aaneeshpanwar@gmail.com" className='w-full'>E-mail</a>
         </div>
 
         <div className='flex gap-4 p-4 relative z-30 text-shadow-3d text-xl shadow-3d rounded-md items-center '>
-          <img src="./logos/social/whatsapp.svg" alt="" className='h-6 bg-white p-0.5 rounded-sm shadow-3d' />
+          <img src="./logos/social/whatsapp.svg" alt="" className='h-6 bg-zinc-950 p-0.5 rounded-sm shadow-3d' />
           <a href="https://wa.me/917668338593" className='w-full'>Whatsapp</a>
         </div>
       </div>

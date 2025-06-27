@@ -18,7 +18,7 @@ export default function ProjectCard() {
 
         {projects.map((item) => (
           <div className="flex flex-col gap-4 w-full" key={item.id}>
-            <div className="flex gap-4 bg-[#0b0b0b] px-2 py-2 rounded-md relative font-jura">
+            <div className="flex gap-4 bg-zinc-950 px-2 py-2 rounded-md relative font-jura">
               <img
                 src={item.thumbnail !== "#" ? item.thumbnail : "./logos/f3.svg"}
                 alt="img"
@@ -49,12 +49,6 @@ export default function ProjectCard() {
           <div className="bg-[linear-gradient(135deg,#041921,#211f20)] rounded-lg w-11/12 max-w-xl overflow-y-auto "
           onClick={(e) => e.stopPropagation()}
           >
-            {/* <span
-              className="absolute text-xl text-gray-100 cursor-pointer z-100 top-[20%] right-[50%] translate-x-[50%] bg-black/70 px-2 rounded-full"
-              onClick={closeDialog}
-            >
-              ✖
-            </span> */}
 
             <div className="h-50 relative">
               <span className="font-jura bg-cyan-600 px-2  rounded-md absolute z-1 left-1 top-1">{selectedData.techCategory}</span>

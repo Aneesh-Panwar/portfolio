@@ -81,12 +81,12 @@ html, body {
 
 
 .shadow-3dr{
-  box-shadow: inset -1.5px -1.5px 4px rgba(255, 255, 255, 0.886),
+  box-shadow: inset -1.5px -1.5px 4px rgba(49, 49, 49, 0.886),
   inset 3px 3px 15px 3px black;
 }
 
 .shadow-3d{
-  box-shadow: -1px -1px 4px white,
+  box-shadow: -1px -1px 4px rgb(66, 66, 66),
   3px 3px 10px 3px black;
 }
 

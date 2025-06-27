@@ -6,6 +6,10 @@ html{
 }
 
 ::-webkit-scrollbar {
+  width: 3px;
+}
+
+body::-webkit-scrollbar {
   width: 8px;
 }
 
@@ -14,8 +18,13 @@ html{
   border-radius: 8px;
 }
 
+::-webkit-scrollbar-thumb {
+  background: #3f3f47;
+  border-radius: 5px;
+}
+
 body::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, rgb(0,0,0), rgb(0,78,0), rgb(3,238,255), rgb(34,5,183), rgb(120,2,2), black);
+  background: linear-gradient(45deg, rgb(0,0,0), rgb(0,78,0), rgb(3,238,255), rgb(34,5,183), black);
   border-radius: 5px;
 }
 
@@ -37,18 +46,12 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .scroll-x-custom::-webkit-scrollbar-thumb {
-  background-color: #323030; /* Solid color (no gradient) */
+  background-color: #3f3f47; /* Solid color (no gradient) */
   border-radius: 4px;
 }
 
 .scroll-x-custom::-webkit-scrollbar-thumb:hover {
-  background-color: #363636;
+  background-color: #0488ca;
 }
 
-
-.wallpoet-regular {
-  font-family: "Wallpoet", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
 
