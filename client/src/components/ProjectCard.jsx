@@ -13,10 +13,11 @@ export default function ProjectCard() {
 
   return (
     <>
-      <div className="flex flex-col gap-4 font-orbitron px-4">
-        <div className="text-cyan-700 text-xl font-wallpoet">Ideas. Built. Shipped</div>
+      <div className=" font-orbitron px-4">
+        <div className="text-cyan-700 mb-10 text-xl font-wallpoet">Ideas. Built. Shipped</div>
 
-        {projects.map((item) => (
+        <div className="flex flex-col gap-4 max-h-65 overflow-y-auto">
+          {projects.map((item) => (
           <div className="flex flex-col gap-4 w-full" key={item.id}>
             <div className="flex gap-4 bg-zinc-950 px-2 py-2 rounded-md relative font-jura">
               <img
@@ -35,8 +36,9 @@ export default function ProjectCard() {
             </div>
           </div>
         ))}
+        </div>
 
-        <button className="bg-cyan-950 w-fit px-4 py-2 rounded-md hover:opacity-50 active:opacity-100">
+        <button className="bg-cyan-950 w-fit px-4 py-2 mt-10 rounded-md hover:opacity-50 transition active:opacity-100">
           Expand
         </button>
       </div>

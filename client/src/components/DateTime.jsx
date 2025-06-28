@@ -25,7 +25,7 @@ export default function DateTime() {
   });
 
   return (
-    <div className="text-sm text-gray-500 mt-2">
+    <div className="text-sm font-semibold font-jura text-gray-500 mt-2">
       {date} — {time}
     </div>
   );

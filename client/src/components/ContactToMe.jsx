@@ -1,43 +1,45 @@
 import { useRef } from "react";
 import emailjs from "emailjs-com";
 import { UserRoundPenIcon, MailIcon, MessageSquareHeart, SendHorizontal } from "lucide-react";
-
+import { useModal } from "./ModalContext";
 
 
 
 export default function ContactToMe() {
   const form = useRef();
+  const { showAlert, showConfirm } = useModal();
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
     const userEmail = form.current.email.value;
 
-    const confirmSend = window.confirm(
-        `Make sure '${userEmail}' is your correct email..!\nI will be connecting through it.\
-        \n\n Do you want to continue ??`
+    const confirmSend = await showConfirm(
+      `Make sure "${userEmail}" is your correct email...! \nI will be connecting through it.`, 'Do you want to continue?'
     );
 
     if (!confirmSend) {
-        alert("Message not sent. Please double-check your email.");
-        return;
+      await showAlert("Message not sent. Please double-check your email.");
+      return;
     }
 
-    emailjs.sendForm(
+    emailjs
+      .sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY    
-    ).then(
-      (result) => {
-        alert("Message sent!");
-        form.current.reset();
-      },
-      (error) => {
-        alert("Failed to send. Try again.");
-        console.error(error);
-      }
-    );
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        async (result) => {
+          await showAlert("Message sent!");
+          form.current.reset();
+        },
+        async (error) => {
+          await showAlert("Failed to send. Please try again.");
+          console.error(error);
+        }
+      );
   };
 
   return (

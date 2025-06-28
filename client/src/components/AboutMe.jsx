@@ -7,12 +7,12 @@ export default function AboutMe() {
 
         <div  className="font-jura tracking-[2px] text-gray-30 flex flex-col gap-4">
           <p>
-        I'm <span className="font-bold text-gray-100">Aneesh Panwar</span> a Computer Science Engineering diploma graduate,
+        I'm <span className="font-wallpoet text-lg text-gray-100">Aneesh Panwar</span> a Computer Science Engineering diploma graduate,
          specialized in software and web 
         development, with hands-on experience in C, C++, Python, Java, and full-stack 
         technologies. </p>
 
-        <p className="font-bold text-white">Got a project or idea? Feel free to reach out — 
+        <p className="text-white">Got a project or idea?<br /> Feel free to reach out — 
           I’m always open to collaborations and new challenges!</p>
 
           <a href="#contact" className="w-fit">

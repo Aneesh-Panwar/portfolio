@@ -23,10 +23,12 @@ export default function Footer() {
                 <a href="#contact" className='text-gray-400 pl-5 hover:text-white'>contact me</a>
             </div>
             <div className='flex flex-col capitalize'>
-                <h1 className='text-2xl relative text-gray-600 py-2'>Contact Me <hr className='w-22 border-cyan-800 '/></h1>
+                <h1 className='text-2xl relative text-gray-600 py-2'>Contact Me <hr className='w-16 border-cyan-800 '/></h1>
                 <a href="https://x.com/aneesh_panwar?t=bfFksuJHIrjvhmLqhw597A&s=08" className="hover:text-white pl-5 text-gray-400">X</a>
-                <a href={emailLink} className="hover:text-white pl-5 text-gray-400">E-mail me</a>
+                <a href={emailLink} className="hover:text-white pl-5 text-gray-400">E-mail</a>
                 <a href="https://www.linkedin.com/in/aneeshpanwar/" className="hover:text-white pl-5 text-gray-400">linked - in</a>
+                <a href="https://t.me/Aneesh_panwar" className="hover:text-white pl-5 text-gray-400">Teligram</a>
+                <a href="https://github.com/Aneesh-Panwar" className="hover:text-white pl-5 text-gray-400">github</a>
                 <a
                     href={whatsappLink}
                     target="_blank"

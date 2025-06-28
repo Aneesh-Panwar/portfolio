@@ -6,12 +6,13 @@ export default function Journey() {
   const [selectedJourney, setSelectedJourney] = useState(null);
 
   return (
-    <div className="max-h-95 overflow-y-auto">
+    <>
       <div className="text-cyan-700 text-xl font-wallpoet pl-4 mb-10">
         From curiosity to code
       </div>
 
-      {journey.map((item, i) => (
+      <div className="max-h-95 overflow-y-auto pt-2">
+           {journey.map((item, i) => (
         <div
           className="relative ml-6 mt-4 mr-4"
           key={i}
@@ -62,6 +63,8 @@ export default function Journey() {
           </div>
         </div>
       ))}
+      </div>
+
 
       {/* Dialog / Modal */}
       {selectedJourney && (
@@ -94,6 +97,6 @@ export default function Journey() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

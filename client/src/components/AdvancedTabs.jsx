@@ -73,7 +73,7 @@ const AdvancedTabs = () => {
       {/* Tab Content */}
       <div
         {...swipeHandlers}
-        className="relative h-80 overflow-auto mt-6 bg-black shadow-inner rounded-lg p-4 min-h-[120px]"
+        className="relative max-h-80 overflow-auto mt-6 bg-black shadow-inner rounded-lg p-4 min-h-[120px]"
       >
         <AnimatePresence mode="wait">
           <motion.div

@@ -11,7 +11,7 @@ export default function Head() {
         </div> */}
 
         <div className='flex items-center gap-4'>
-            <div className='h-20 w-20'>
+            <div className='h-20 w-20 rounded-md'>
              <ZoomableImage src={"./images/profile.jpg"} className='w-20 h-20'/>
             </div>
 
@@ -20,7 +20,7 @@ export default function Head() {
                 </h3>
                 <p className='text-gray-400 text-sm'>Programmer & Developer</p>
                 <div className='flex  flex-wrap w-full gap-1 justify-between items-center'>
-                  <span className='text-sm bg-green-600 px-2 font-jura end rounded-sm '>Available</span>
+                  <span className='text-sm  bg-green-700 px-2 font-jura end rounded-sm '>Available</span>
                   <DateTime/>
                 </div>
             </div>
